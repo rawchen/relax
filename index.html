@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="./images/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>YOYLING.</title>
+
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <canvas id="bg"></canvas>
+    
+    <span class="setup active"></span>
+    
+    <nav id="menu" class="visible">
+        <div class="row">
+            <div class="col"><span class="icon icon-volume"></span></div>
+            <div class="col"></div>
+            <div class="col"><span class="icon icon-list"></span></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"><span class="icon icon-logo"></span></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <span class="icon icon-timer"></span>
+                <section class="timer"><span class="minute">30</span>:<span class="second">00</span></section>
+            </div>
+            <div class="col"></div>
+            <div class="col"><span class="icon icon-exit"></span></div>
+        </div>
+        
+        <div class="line-group">
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+            <div class="line-3"></div>
+            <div class="line-4"></div>
+        </div>
+    </nav>
+
+    <section class="side-bar">
+        
+        <div class="mask"></div>
+
+        <ul id="sound-list">
+            <li data-sound="rain">
+                <div class="sound-icon">
+                    <span class="icon icon-rain"></span>
+                </div>
+
+                <div class="control-block">
+                    <h4 class="title">雨声<small>Rain</small></h4>
+                    <div class="control-bar">
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <audio preload="none" loop>
+                    <source type="audio/ogg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/ogg/rain.ogg">
+                    <source type="audio/mpeg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/mp3/rain.mp3">
+                </audio>
+            </li>
+
+            <li data-sound="thunder">
+                <div class="sound-icon">
+                    <span class="icon icon-thunder"></span>
+                </div>
+
+                <div class="control-block">
+                    <h4 class="title">雷声<small>Thunder</small></h4>
+                    <div class="control-bar">
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <audio preload="none" loop>
+                    <source type="audio/ogg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/ogg/thunder.ogg">
+                    <source type="audio/mpeg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/mp3/thunder.mp3">
+                </audio>
+            </li>
+            
+            <li data-sound="farm">
+                <div class="sound-icon">
+                    <span class="icon icon-farm"></span>
+                </div>
+
+                <div class="control-block">
+                    <h4 class="title">农场<small>Farm</small></h4>
+                    <div class="control-bar">
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <audio preload="none" loop>
+                    <source type="audio/ogg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/ogg/farm.ogg">
+                    <source type="audio/mpeg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/mp3/farm.mp3">
+                </audio>
+            </li>
+            
+            <li data-sound="night">
+                <div class="sound-icon">
+                    <span class="icon icon-night"></span>
+                </div>
+
+                <div class="control-block">
+                    <h4 class="title">夜晚<small>Night</small></h4>
+                    <div class="control-bar">
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <audio preload="none" loop>
+                    <source type="audio/ogg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/ogg/night.ogg">
+                    <source type="audio/mpeg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/mp3/night.mp3">
+                </audio>
+            </li>
+            
+            <li data-sound="forest">
+                <div class="sound-icon">
+                    <span class="icon icon-forest"></span>
+                </div>
+
+                <div class="control-block">
+                    <h4 class="title">森林<small>Forest</small></h4>
+                    <div class="control-bar">
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <audio preload="none" loop>
+                    <source type="audio/ogg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/ogg/forest.ogg">
+                    <source type="audio/mpeg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/mp3/forest.mp3">
+                </audio>
+            </li>
+            
+            <li data-sound="leaves">
+                <div class="sound-icon">
+                    <span class="icon icon-leaves"></span>
+                </div>
+
+                <div class="control-block">
+                    <h4 class="title">落叶<small>Leaves</small></h4>
+                    <div class="control-bar">
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <audio preload="none" loop>
+                    <source type="audio/ogg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/ogg/leaves.ogg">
+                    <source type="audio/mpeg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/mp3/leaves.mp3">
+                </audio>
+            </li>
+            
+            <li data-sound="river">
+                <div class="sound-icon">
+                    <span class="icon icon-river"></span>
+                </div>
+
+                <div class="control-block">
+                    <h4 class="title">河流<small>River</small></h4>
+                    <div class="control-bar">
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <audio preload="none" loop>
+                    <source type="audio/ogg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/ogg/river.ogg">
+                    <source type="audio/mpeg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/mp3/river.mp3">
+                </audio>
+            </li>
+            
+            <li data-sound="fire">
+                <div class="sound-icon">
+                    <span class="icon icon-fire"></span>
+                </div>
+
+                <div class="control-block">
+                    <h4 class="title">篝火<small>Fire</small></h4>
+                    <div class="control-bar">
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <audio preload="none" loop>
+                    <source type="audio/ogg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/ogg/fire.ogg">
+                    <source type="audio/mpeg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/mp3/fire.mp3">
+                </audio>
+            </li>
+            
+            <li data-sound="seaside">
+                <div class="sound-icon">
+                    <span class="icon icon-seaside"></span>
+                </div>
+
+                <div class="control-block">
+                    <h4 class="title">海边<small>Seaside</small></h4>
+                    <div class="control-bar">
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <audio preload="none" loop>
+                    <source type="audio/ogg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/ogg/seaside.ogg">
+                    <source type="audio/mpeg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/mp3/seaside.mp3">
+                </audio>
+            </li>
+            
+            <li data-sound="yacht">
+                <div class="sound-icon">
+                    <span class="icon icon-yacht"></span>
+                </div>
+
+                <div class="control-block">
+                    <h4 class="title">帆船<small>Yacht</small></h4>
+                    <div class="control-bar">
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <audio preload="none" loop>
+                    <source type="audio/ogg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/ogg/yacht.ogg">
+                    <source type="audio/mpeg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/mp3/yacht.mp3">
+                </audio>
+            </li>
+            
+            <li data-sound="coffee">
+                <div class="sound-icon">
+                    <span class="icon icon-coffee"></span>
+                </div>
+
+                <div class="control-block">
+                    <h4 class="title">咖啡厅<small>Coffee</small></h4>
+                    <div class="control-bar">
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <audio preload="none" loop>
+                    <source type="audio/ogg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/ogg/coffee.ogg">
+                    <source type="audio/mpeg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/mp3/coffee.mp3">
+                </audio>
+            </li>
+            
+            <li data-sound="train">
+                <div class="sound-icon">
+                    <span class="icon icon-train"></span>
+                </div>
+
+                <div class="control-block">
+                    <h4 class="title">火车<small>Train</small></h4>
+                    <div class="control-bar">
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <audio preload="none" loop>
+                    <source type="audio/ogg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/ogg/train.ogg">
+                    <source type="audio/mpeg" src="https://yoyling.oss-cn-shenzhen.aliyuncs.com/files/relax/sound/mp3/train.mp3">
+                </audio>
+            </li>
+        </ul>
+    </section>
+
+    <script>
+        (function (window, document, undefined) {
+            'use strict';
+
+            var lastTime = 0, vendors = ['ms', 'moz', 'webkit', 'o'], i;
+
+            for (i = 0; i < vendors.length && !window.requestAnimationFrame; ++i) {
+
+                window.requestAnimationFrame = window[vendors[i] + 'RequestAnimationFrame'];
+                window.cancelAnimationFrame = window[vendors[i] + 'CancelAnimationFrame'] || window[vendors[i] + 'CancelRequestAnimationFrame'];
+            }
+
+            if (!window.requestAnimationFrame) {
+
+                window.requestAnimationFrame = function (callback) {
+
+                    var currTime = new Date().getTime(),
+                        timeToCall = Math.max(0, 16 - (currTime - lastTime)),
+                        id = window.setTimeout(function () {
+                                callback(currTime + timeToCall);
+                            }, timeToCall);
+
+                    lastTime = currTime + timeToCall;
+
+                    return id;
+                };
+            }
+
+            if (!window.cancelAnimationFrame) {
+
+                window.cancelAnimationFrame = function (id) {
+                    clearTimeout(id);
+                };
+            }
+        })(window, document);
+    </script>
+    <script src="./javascripts/bg.js"></script>
+    <script src="./javascripts/sound.js"></script>
+</body>
+</html>
